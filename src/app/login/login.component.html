@@ -1,1 +1,17 @@
-<button class="btn btn-primary" type="button" (click)="dashboardNav();"> dashboard </button>
+<div class="container">
+  <div class="row">
+    <h1>Log In</h1>
+    <form #f="ngForm">
+      <div class="form-group">
+        <select class="form-control" [(ngModel)]='userSelected'>
+          <option *ngFor="let user of users" [value]="user.id" > {{user.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="login(userSelected);">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
